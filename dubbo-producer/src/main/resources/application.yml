@@ -1,0 +1,22 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/dubbotest?serverTimezone=UTC
+    username: root
+    password: 111111
+    driver-class-name: com.mysql.jdbc.Driver
+  dubbo:
+    application:
+      name: producer
+    registry:
+      address: zookeeper://127.0.0.1:2181
+    protocal:
+      name: dubbo
+      port: 20880
+    scan: com.dubbo.dubbopriducer.service
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
